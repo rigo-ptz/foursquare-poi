@@ -1,3 +1,7 @@
 <resources>
   <string name="app_name">poi</string>
+  <string name="dialog_location_title">Location permission</string>
+  <string name="dialog_location_message">We need location updates to show the stations around you. Could you provide permission?</string>
+  <string name="yes">Yes</string>
+  <string name="no">No</string>
 </resources>
