@@ -2,6 +2,7 @@ package com.oxygen.poi.core.ui.base
 
 import android.Manifest
 import android.app.AlertDialog
+import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,14 +14,23 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.oxygen.poi.R
 import com.oxygen.poi.utils.AppUtils
-import dagger.android.support.DaggerFragment
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.android.support.AndroidSupportInjection
+import moxy.MvpAppCompatFragment
 import timber.log.Timber
+import javax.inject.Inject
 
 /**
  * @author Yamushev Igor
  * @since  5/23/21
  */
-abstract class BaseFragment<T : ViewDataBinding> : DaggerFragment() {
+abstract class BaseFragment<T : ViewDataBinding> :
+  MvpAppCompatFragment(), HasAndroidInjector {
+
+  @Inject
+  lateinit var androidInjector: DispatchingAndroidInjector<Any>
 
   lateinit var binding: T
 
@@ -30,6 +40,13 @@ abstract class BaseFragment<T : ViewDataBinding> : DaggerFragment() {
     registerForActivityResult(
       ActivityResultContracts.RequestPermission()
     ) { isGranted -> onPermissionResult(isGranted) }
+
+  override fun androidInjector(): AndroidInjector<Any> = androidInjector
+
+  override fun onAttach(context: Context) {
+    AndroidSupportInjection.inject(this)
+    super.onAttach(context)
+  }
 
   override fun onCreateView(
     inflater: LayoutInflater,

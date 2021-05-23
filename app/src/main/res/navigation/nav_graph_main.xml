@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/navGraphMain"
+  app:startDestination="@id/splashFragment">
+
+  <fragment
+    android:id="@+id/splashFragment"
+    tools:layout="@layout/fragment_splash"
+    android:name="com.oxygen.poi.ui.splash.ui.fragment.SplashFragment">
+   <!-- <action
+      android:id="@+id/actionToLogin"
+      app:destination="@id/loginFragment"
+      app:popUpTo="@id/navGraphMain"
+      app:popUpToInclusive="true"/>-->
+  </fragment>
+
+  <!--<fragment
+    android:id="@+id/loginFragment"
+    tools:layout="@layout/fragment_login"
+    android:name="com.oxygen.poi_chargers.ui.login.ui.fragment.LoginFragment"/>
+
+  <fragment
+    android:id="@+id/placesFragment"
+    tools:layout="@layout/fragment_places"
+    android:name="com.oxygen.poi_chargers.ui.stations.ui.fragment.StationsFragment">
+    <action
+      android:id="@+id/actionToSettings"
+      app:destination="@id/settingsFragment"/>
+  </fragment>-->
+
+</navigation>
