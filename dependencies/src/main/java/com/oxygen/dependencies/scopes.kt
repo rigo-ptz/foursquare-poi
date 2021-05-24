@@ -16,6 +16,7 @@ fun DependencyHandler.kotlinDeps() {
 
 fun DependencyHandler.tests() {
   testImplementation(Dependencies.jUnit)
+  testImplementation(Dependencies.mockK)
 }
 
 fun DependencyHandler.androidTests() {

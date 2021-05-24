@@ -1,5 +1,6 @@
 buildscript {
-    repositories {
+    val kotlin_version by extra("1.4.32")
+  repositories {
         google()
         jcenter()
     }

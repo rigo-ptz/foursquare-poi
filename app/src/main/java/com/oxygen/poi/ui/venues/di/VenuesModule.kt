@@ -1,7 +1,7 @@
-package com.oxygen.poi.ui.splash.di
+package com.oxygen.poi.ui.venues.di
 
-import com.oxygen.poi.ui.splash.ui.fragment.SplashFragment
-import com.oxygen.poi.ui.splash.ui.presenter.SplashFragmentPresenter
+import com.oxygen.poi.ui.venues.ui.fragment.VenuesFragment
+import com.oxygen.poi.ui.venues.ui.presenter.VenuesFragmentPresenter
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -9,16 +9,19 @@ import javax.inject.Scope
 
 /**
  * @author Yamushev Igor
- * @since  4/18/21
+ * @since  5/24/21
  */
 @Module
-abstract class SplashModule {
+abstract class VenuesModule {
 
-  @SplashScoped
+  @VenuesScoped
   @ContributesAndroidInjector
-  abstract fun splashFragment(): SplashFragment
+  abstract fun splashFragment(): VenuesFragment
 
 }
+
+@Module
+abstract class VenuesSubComponentModule
 
 @Scope
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
@@ -29,4 +32,4 @@ abstract class SplashModule {
   AnnotationTarget.PROPERTY_GETTER,
   AnnotationTarget.PROPERTY_SETTER
 )
-annotation class SplashScoped
+annotation class VenuesScoped

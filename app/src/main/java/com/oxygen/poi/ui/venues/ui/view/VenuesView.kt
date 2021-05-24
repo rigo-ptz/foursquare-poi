@@ -1,18 +1,15 @@
-package com.oxygen.poi.ui.splash.ui.view
+package com.oxygen.poi.ui.venues.ui.view
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 
-
-
-
 /**
  * @author Yamushev Igor
- * @since  5/23/21
+ * @since  5/24/21
  */
-interface SplashView : MvpView {
+interface VenuesView : MvpView {
 
   @AddToEndSingle
-  fun navigateToVenues()
+  fun showVenues()
 
 }

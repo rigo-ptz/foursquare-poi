@@ -4,6 +4,7 @@ import com.oxygen.poi.core.App
 import com.oxygen.poi.core.di.module.AppModule
 import com.oxygen.poi.ui.main.di.MainModule
 import com.oxygen.poi.ui.splash.di.SplashModule
+import com.oxygen.poi.ui.venues.di.VenuesModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
@@ -19,5 +20,6 @@ import javax.inject.Singleton
   AppModule::class,
   MainModule::class,
   SplashModule::class,
+  VenuesModule::class,
 ])
 interface AppComponent : AndroidInjector<App>

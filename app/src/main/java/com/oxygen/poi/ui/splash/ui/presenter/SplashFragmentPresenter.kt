@@ -1,27 +1,30 @@
 package com.oxygen.poi.ui.splash.ui.presenter
 
-import android.content.Context
+import com.oxygen.poi.core.ui.base.BasePresenter
+import com.oxygen.poi.ui.splash.di.SplashScoped
 import com.oxygen.poi.ui.splash.ui.view.SplashView
-import moxy.MvpPresenter
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.core.Single
+import io.reactivex.rxjava3.kotlin.addTo
+import io.reactivex.rxjava3.kotlin.subscribeBy
+import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 /**
  * @author Yamushev Igor
  * @since  4/19/21
  */
-class SplashFragmentPresenter @Inject constructor(
-  //private val checkLoginRequiredUseCase: CheckLoginRequiredUseCase,
-  private val context: Context
-) : MvpPresenter<SplashView>() {
+@SplashScoped
+class SplashFragmentPresenter @Inject constructor() : BasePresenter<SplashView>() {
 
- /* private val _isLoginRequired = MutableLiveData<Consumable<Boolean>>()
-  val isLoginRequired: LiveData<Consumable<Boolean>> = _isLoginRequired
-
-  init {
+  fun init() {
     Single.timer(1, TimeUnit.SECONDS)
+      .observeOn(AndroidSchedulers.mainThread())
       .subscribeBy {
-        _isLoginRequired.postValue(checkLoginRequiredUseCase.isLoginRequired().toConsumable())
+        viewState.navigateToVenues()
       }
-  }*/
+      .addTo(compositeDisposable)
+  }
 
 }
+
