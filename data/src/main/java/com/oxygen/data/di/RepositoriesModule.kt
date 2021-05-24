@@ -1,5 +1,8 @@
 package com.oxygen.data.di
 
+import com.oxygen.data.venues.repo.VenuesRepositoryImpl
+import com.oxygen.domain.venues.repo.VenuesRepository
+import dagger.Binds
 import dagger.Module
 
 /**
@@ -9,7 +12,7 @@ import dagger.Module
 @Module
 abstract class RepositoriesModule {
 
-  //@Binds
-  //abstract fun bindCustomerRepo(repo: CustomerRepositoryImpl): CustomerRepository
+  @Binds
+  abstract fun bindStationsRepo(repo: VenuesRepositoryImpl): VenuesRepository
 
 }

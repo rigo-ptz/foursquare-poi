@@ -1,4 +1,4 @@
-package com.oxygen.data.utils.libs.okhttp
+package com.oxygen.data.core.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

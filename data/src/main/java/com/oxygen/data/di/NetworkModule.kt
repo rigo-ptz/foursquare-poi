@@ -1,8 +1,8 @@
 package com.oxygen.data.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
-import com.oxygen.data.core.HttpConstants
-import com.oxygen.data.utils.libs.okhttp.OkHttpClientFactory
+import com.oxygen.data.core.remote.HttpConstants
+import com.oxygen.data.core.remote.OkHttpClientFactory
 import dagger.Module
 import dagger.Provides
 import io.reactivex.rxjava3.schedulers.Schedulers

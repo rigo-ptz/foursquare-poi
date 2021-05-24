@@ -8,6 +8,10 @@ plugins {
     kotlin("plugin.serialization") version "1.4.30"
 }
 
+apply {
+    from("$rootDir/poi.gradle.kts")
+}
+
 android {
     compileSdkVersion(Android.compileSdk)
     buildToolsVersion(Android.buildTools)
@@ -31,6 +35,12 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         multiDexEnabled = true
+
+        val clientId: String by project.extra
+        val clientSecret: String by project.extra
+
+        buildConfigField("String", "clientId", clientId)
+        buildConfigField("String", "clientSecret", clientSecret)
     }
 
     buildTypes {

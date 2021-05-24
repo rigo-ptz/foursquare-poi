@@ -1,5 +1,6 @@
 package com.oxygen.poi.ui.venues.ui.presenter
 
+import com.oxygen.domain.venues.usecase.LoadVenuesUseCase
 import com.oxygen.poi.core.ui.base.BasePresenter
 import com.oxygen.poi.ui.venues.di.VenuesScoped
 import com.oxygen.poi.ui.venues.ui.view.VenuesView
@@ -10,6 +11,8 @@ import javax.inject.Inject
  * @since  5/24/21
  */
 @VenuesScoped
-class VenuesFragmentPresenter @Inject constructor() : BasePresenter<VenuesView>() {
+class VenuesFragmentPresenter @Inject constructor(
+  private val venuesUseCase: LoadVenuesUseCase
+) : BasePresenter<VenuesView>() {
 
 }

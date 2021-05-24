@@ -1,8 +1,6 @@
 package com.oxygen.poi.ui.venues.di
 
 import com.oxygen.poi.ui.venues.ui.fragment.VenuesFragment
-import com.oxygen.poi.ui.venues.ui.presenter.VenuesFragmentPresenter
-import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import javax.inject.Scope
@@ -19,9 +17,6 @@ abstract class VenuesModule {
   abstract fun splashFragment(): VenuesFragment
 
 }
-
-@Module
-abstract class VenuesSubComponentModule
 
 @Scope
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)

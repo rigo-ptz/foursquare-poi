@@ -8,10 +8,6 @@ plugins {
 
 }
 
-apply {
-    from("$rootDir/poi.gradle.kts")
-}
-
 android {
 
     compileSdkVersion(Android.compileSdk)
@@ -41,12 +37,6 @@ android {
         vectorDrawables.useSupportLibrary = true
 
         multiDexEnabled = true
-
-        val clientId: String by project.extra
-        val clientSecret: String by project.extra
-
-        buildConfigField("String", "clientId", clientId)
-        buildConfigField("String", "clientSecret", clientSecret)
     }
 
     buildTypes {
@@ -64,6 +54,7 @@ android {
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(project(":domain"))
+    implementation(project(":data"))
     kotlinDeps()
     tests()
     mvp()

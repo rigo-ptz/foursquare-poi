@@ -1,5 +1,6 @@
 package com.oxygen.poi.core.di.component
 
+import com.oxygen.data.di.DataModule
 import com.oxygen.poi.core.App
 import com.oxygen.poi.core.di.module.AppModule
 import com.oxygen.poi.ui.main.di.MainModule
@@ -21,5 +22,6 @@ import javax.inject.Singleton
   MainModule::class,
   SplashModule::class,
   VenuesModule::class,
+  DataModule::class
 ])
 interface AppComponent : AndroidInjector<App>
