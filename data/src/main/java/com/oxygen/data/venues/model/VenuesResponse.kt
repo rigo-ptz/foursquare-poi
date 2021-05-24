@@ -27,8 +27,8 @@ data class VenueResponse(
 
 @Serializable
 data class LocationResponse(
-  val address: String,
+  val address: String? = null,
   val lat: Double,
-  val lon: Double,
+  val lng: Double,
   val distance: Int
 )

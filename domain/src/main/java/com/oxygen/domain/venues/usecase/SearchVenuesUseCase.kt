@@ -9,7 +9,7 @@ import javax.inject.Inject
  * @author Yamushev Igor
  * @since  5/24/21
  */
-class LoadVenuesUseCase @Inject constructor(
+class SearchVenuesUseCase @Inject constructor(
   private val venuesRepository: VenuesRepository
 ) {
 

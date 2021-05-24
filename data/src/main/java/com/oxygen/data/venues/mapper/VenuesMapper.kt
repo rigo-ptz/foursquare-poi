@@ -18,7 +18,7 @@ object VenuesMapper {
         LocationModel(
           it.location.address,
           it.location.lat,
-          it.location.lon,
+          it.location.lng,
           it.location.distance,
         )
       )

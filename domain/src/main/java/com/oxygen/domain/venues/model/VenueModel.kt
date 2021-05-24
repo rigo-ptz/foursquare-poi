@@ -11,7 +11,7 @@ data class VenueModel(
 )
 
 data class LocationModel(
-  val address: String,
+  val address: String?,
   val lat: Double,
   val lon: Double,
   val distance: Int

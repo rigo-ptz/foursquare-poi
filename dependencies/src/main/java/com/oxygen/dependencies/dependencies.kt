@@ -8,7 +8,7 @@ package com.oxygen.dependencies
 object Android {
   const val compileSdk = 30
   const val buildTools = "30.0.2"
-  const val applicationId = "com.oxygen.poi_chargers"
+  const val applicationId = "com.oxygen.poi"
   const val minSdkVersion = 21
   const val targetSdkVersion = 30
   const val versionCode = 1

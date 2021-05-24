@@ -1,7 +1,9 @@
 package com.oxygen.poi.ui.venues.ui.view
 
+import com.oxygen.poi.ui.venues.ui.model.VenueUiModel
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
+import moxy.viewstate.strategy.alias.OneExecution
 
 /**
  * @author Yamushev Igor
@@ -10,6 +12,12 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 interface VenuesView : MvpView {
 
   @AddToEndSingle
-  fun showVenues()
+  fun showVenues(venues: List<VenueUiModel>)
+
+  @AddToEndSingle
+  fun showProgress(show: Boolean)
+
+  @OneExecution
+  fun showError(message: String)
 
 }

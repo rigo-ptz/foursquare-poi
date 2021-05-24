@@ -9,7 +9,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ApiMetaResponse(
   val code: Int,
-  val errorDetail: String?,
-  val errorType: String?,
+  val errorDetail: String? = null,
+  val errorType: String? = null,
   val requestId: String?
 )

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="Font"/>
+
+  <style name="Bold.Sahitya" parent="Font">
+    <item name="android:fontFamily">@font/sahitya_bold</item>
+  </style>
+
+  <style name="Title.Bold" parent="Bold.Sahitya">
+    <item name="android:textSize">@dimen/sp16</item>
+  </style>
+
+  <style name="Title.Bold.Black" parent="Title.Bold">
+    <item name="android:textColor">@color/black</item>
+  </style>
+
+
+</resources>
