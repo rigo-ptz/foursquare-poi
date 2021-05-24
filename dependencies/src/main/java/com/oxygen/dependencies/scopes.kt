@@ -71,6 +71,7 @@ fun DependencyHandler.rxJava() {
   implementation(Dependencies.rxKotlin)
   implementation(Dependencies.rxAndroid)
   implementation(Dependencies.rxJavaAdapter)
+  implementation(Dependencies.rxBindings)
 }
 
 fun DependencyHandler.uiLayer() {

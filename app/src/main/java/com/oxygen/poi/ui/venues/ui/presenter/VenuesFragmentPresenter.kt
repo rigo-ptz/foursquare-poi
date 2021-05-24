@@ -10,7 +10,9 @@ import com.oxygen.poi.ui.venues.ui.model.VenueUiModel
 import com.oxygen.poi.ui.venues.ui.view.VenuesView
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.addTo
+import io.reactivex.rxjava3.subjects.PublishSubject
 import timber.log.Timber
+import java.util.*
 import javax.inject.Inject
 
 /**
@@ -22,11 +24,19 @@ class VenuesFragmentPresenter @Inject constructor(
   private val searchVenuesUseCase: SearchVenuesUseCase
 ) : BasePresenter<VenuesView>() {
 
-  fun loadStations(location: Location, query: String?) {
-    searchVenuesUseCase
-      .loadVenues(location.latitude, location.longitude, query)
-      .doOnSubscribe {
-        viewState.showProgress(true)
+  private val searchSubject: PublishSubject<Pair<Location, String?>> = PublishSubject.create()
+
+  init {
+    initSearch()
+  }
+
+  private fun initSearch() {
+    searchSubject
+      .doOnNext { viewState.showProgress(true) }
+      .switchMap { (location, query) ->
+        searchVenuesUseCase
+          .loadVenues(location.latitude, location.longitude, query)
+          .toObservable()
       }
       .map { list ->
         list.map { VenueUiModel.from(it) }
@@ -42,6 +52,10 @@ class VenuesFragmentPresenter @Inject constructor(
         }
       )
       .addTo(compositeDisposable)
+  }
+
+  fun loadStations(location: Location, query: String?) {
+    searchSubject.onNext(location to query)
   }
 
 }

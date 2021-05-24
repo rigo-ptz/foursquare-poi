@@ -49,6 +49,9 @@ class RealLocationProvider(
   private val fusedLocationClient = LocationServices.getFusedLocationProviderClient(context)
   private var locationCallback: LocationCallback? = null
 
+  val lastKnownLocation: Location?
+    get() = locationSubject.value
+
   @RequiresPermission(
     anyOf = ["android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"]
   )

@@ -76,6 +76,7 @@ object Dependencies {
   const val rxJava = "io.reactivex.rxjava3:rxjava:3.0.12"
   const val rxKotlin = "io.reactivex.rxjava3:rxkotlin:3.0.1"
   const val rxAndroid = "io.reactivex.rxjava3:rxandroid:3.0.0"
+  const val rxBindings = "com.jakewharton.rxbinding4:rxbinding:4.0.0"
 
   // Loggers
   const val timber = "com.jakewharton.timber:timber:4.7.1"

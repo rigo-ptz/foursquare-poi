@@ -9,11 +9,31 @@
   <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.google.android.material.card.MaterialCardView
+      android:id="@+id/search"
+      android:layout_width="match_parent"
+      android:layout_height="56dp"
+      android:layout_marginHorizontal="@dimen/spacing_big"
+      android:layout_marginVertical="@dimen/spacing_small_4"
+      app:cardElevation="2dp"
+      app:cardPreventCornerOverlap="true"
+      app:cardCornerRadius="2dp"
+      app:cardBackgroundColor="@color/white"
+      android:clipChildren="false">
+      <EditText
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/spacing_medium"
+        android:hint="@string/hint_search"
+        android:singleLine="true"/>
+    </com.google.android.material.card.MaterialCardView>
+
     <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rvVenues"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      android:paddingTop="@dimen/spacing_small_4"
+      android:paddingTop="60dp"
       android:paddingBottom="@dimen/spacing_small_4"
       android:clipToPadding="false"
       android:orientation="vertical"
