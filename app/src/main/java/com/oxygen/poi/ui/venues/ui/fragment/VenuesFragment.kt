@@ -99,7 +99,6 @@ class VenuesFragment : BaseFragment<FragmentVenuesBinding>(), VenuesView {
 
   private fun initSearchInput() {
     binding.input.textChanges()
-      .filter { it.length >= 3 }
       .debounce(800, TimeUnit.MILLISECONDS)
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe(

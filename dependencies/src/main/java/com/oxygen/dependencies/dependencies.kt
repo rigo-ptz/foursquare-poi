@@ -30,6 +30,8 @@ object Dependencies {
   const val androidJUnit = "androidx.test.ext:junit:1.1.2"
   const val androidEspresso = "androidx.test.espresso:espresso-core:3.3.0"
   const val mockK = "io.mockk:mockk:1.10.6"
+  const val fragmentTests = "androidx.fragment:fragment-testing:1.3.4"
+  const val navTests = "androidx.navigation:navigation-testing:2.3.5"
 
   // MVP
   const val moxy = "com.github.moxy-community:moxy:${Versions.moxy}"

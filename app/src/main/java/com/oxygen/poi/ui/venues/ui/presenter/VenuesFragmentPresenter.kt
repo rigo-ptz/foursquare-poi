@@ -8,6 +8,7 @@ import com.oxygen.poi.core.ui.base.BasePresenter
 import com.oxygen.poi.ui.venues.di.VenuesScoped
 import com.oxygen.poi.ui.venues.ui.model.VenueUiModel
 import com.oxygen.poi.ui.venues.ui.view.VenuesView
+import com.oxygen.poi.utils.libs.espresso.EspressoIdlingResource
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.addTo
 import io.reactivex.rxjava3.subjects.PublishSubject
@@ -34,6 +35,7 @@ class VenuesFragmentPresenter @Inject constructor(
     searchSubject
       .doOnNext { viewState.showProgress(true) }
       .switchMap { (location, query) ->
+        EspressoIdlingResource.increment()
         searchVenuesUseCase
           .loadVenues(location.latitude, location.longitude, query)
           .toObservable()
@@ -44,6 +46,7 @@ class VenuesFragmentPresenter @Inject constructor(
       .observeOn(AndroidSchedulers.mainThread())
       .subscribe(
         {
+          EspressoIdlingResource.decrement()
           viewState.showVenues(it)
         },
         {

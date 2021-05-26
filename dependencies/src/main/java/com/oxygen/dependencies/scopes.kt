@@ -21,7 +21,9 @@ fun DependencyHandler.tests() {
 
 fun DependencyHandler.androidTests() {
   androidTestImplementation(Dependencies.androidJUnit)
-  androidTestImplementation(Dependencies.androidEspresso)
+  implementation(Dependencies.androidEspresso)
+  androidTestImplementation(Dependencies.navTests)
+  debugImplementation(Dependencies.fragmentTests)
 }
 
 fun DependencyHandler.mvp() {
@@ -106,6 +108,10 @@ private fun DependencyHandler.testImplementation(name: Any) {
 
 private fun DependencyHandler.androidTestImplementation(name: Any) {
   add("androidTestImplementation", name)
+}
+
+private fun DependencyHandler.debugImplementation(name: Any) {
+  add("debugImplementation", name)
 }
 
 fun DependencyHandler.implementation(

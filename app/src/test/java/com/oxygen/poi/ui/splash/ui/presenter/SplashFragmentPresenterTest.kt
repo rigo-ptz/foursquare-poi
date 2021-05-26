@@ -20,7 +20,6 @@ class SplashFragmentPresenterTest : PresenterTest() {
 
   private lateinit var presenter: SplashFragmentPresenter
 
-
   @Before
   fun setUp() {
     MockKAnnotations.init(this, relaxUnitFun = true)
